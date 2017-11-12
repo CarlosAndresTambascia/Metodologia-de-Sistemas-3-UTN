@@ -8,8 +8,12 @@
 # install django
 pip install django
 
+# make migrations
+python manage.py migrate
+
 # serve with hot reload at localhost:8000
 python manage.py runserver
+
 
 ```
 

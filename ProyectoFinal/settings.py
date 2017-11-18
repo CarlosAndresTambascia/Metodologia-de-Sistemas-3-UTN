@@ -121,6 +121,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#MEDIA_ROOT = '/media'
+MEDIA_ROOT = 'ProyectoFinal/media/'
 
-#MEDIA_URL = 'http://127.0.0.1:8000/media/'
+MEDIA_URL = '/media/'

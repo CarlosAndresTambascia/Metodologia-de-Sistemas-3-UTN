@@ -15,8 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    #page urls
     url(r'^', include('alquileres.urls', namespace="alquileres")),
-]
+    #photos urls
+    #url(r'^media/image/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, }),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

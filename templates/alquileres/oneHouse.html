@@ -1,0 +1,31 @@
+{% extends 'base/base.html' %}
+{% block title %} Alquileres
+{% endblock %}
+{% block content %}
+    <div class="row">
+        {% if propiedad %}
+            <div class="col-md-4">
+                <img class="card-img-top" src="''{{ propiedad.imagen.url }}'" alt=" imagen de la propiedad">
+            </div>
+            <div class="col-md-8">
+                <h1>{{ propiedad.titulo }}</h1>
+            </div>
+        {% else %}
+            <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading">Do oh!</h4>
+                <p>Ha ocurrido un problema cargando esta propiedad</p>
+                <hr>
+                <p class="mb-0">Por favor intente nuevamente mas tarde.</p>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
+{% block footer %}
+    </div>
+    <style>
+
+        .customMargin {
+            margin: 10px;
+        }
+    </style>
+{% endblock %}

@@ -2,13 +2,33 @@
 {% block title %} Alquileres
 {% endblock %}
 {% block content %}
-    <div class="row">
+    <div class="row justify-content-center">
         {% if dpto %}
-            <div class="col-md-4">
-                <img class="card-img-top" src="''{{ propiedad.imagen.url }}'" alt=" imagen de la propiedad">
+            <div class="col-mx-auto">
+                <img class="card-img-top changeImageSize customMargin" src="{{ dpto.imagen.url }}"
+                     alt=" imagen de la propiedad">
             </div>
-            <div class="col-md-8">
-                <h1>{{ propiedad.titulo }}</h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-mx-auto">
+                    <h4 class="customMargin">{{ dpto.titulo }}</h4>
+                </div>
+
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <h4>Descripción: {{ dpto.descripcion }}</h4>
+                    <h4>Maximo nuemero de Habitantes: {{ dpto.maximoHabitantes }}</h4>
+                </div>
+                <div class="col-md-6">
+                    <h4>Ciudad: {{ dpto.ciudad }}</h4>
+                    <h4>Nombre del Propietario: {{ dpto.usuario }}</h4>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-mx-auto">
+                    <a href="" class="btn btn-primary">Reservar ahora</a>
+                </div>
             </div>
         {% else %}
             <div class="alert alert-success" role="alert">
@@ -26,6 +46,11 @@
 
         .customMargin {
             margin: 10px;
+        }
+
+        .changeImageSize {
+            max-width: 600px;
+            max-height: 600px;
         }
     </style>
 {% endblock %}

@@ -22,6 +22,4 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     #page urls
     url(r'^', include('alquileres.urls', namespace="alquileres")),
-    #photos urls
-    #url(r'^media/image/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, }),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

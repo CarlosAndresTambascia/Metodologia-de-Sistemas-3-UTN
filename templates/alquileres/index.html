@@ -13,11 +13,13 @@
                         <div class="card-body">
                             <img class="card-img-top" src="{{ propiedad.imagen.url }}" alt="Imagen de la propiedad">
                             <p class="card-text">{{ propiedad.descripcion }}</p>
-                            <a href="#" class="btn btn-primary">Ir a la Publicacion</a>
+                            <a href="/propiedad/{{ propiedad.id }}" class="btn btn-primary">Ir a la Publicacion</a>
                         </div>
                         <div class="card-footer text-muted">
-                            <span style="color:black;font-weight:bold"> Ciudad: </span> {{ propiedad.ciudad.nombre }} -
-                            <span style="color:black;font-weight:bold"> Habitantes: </span> {{ propiedad.maximoHabitantes }}
+                            <span style="color:black;font-weight:bold"> <i
+                                    class="fa fa-map-marker"></i></span> {{ propiedad.ciudad.nombre }} -
+                            <span style="color:black;font-weight:bold"> <i
+                                    class="fa fa-user-circle-o"></i></span> {{ propiedad.maximoHabitantes }}
                         </div>
                     </div>
                 </div>
@@ -37,6 +39,12 @@
     <style>
         .customMargin {
             margin: 10px;
+        }
+
+        img {
+            width: 100%;
+            max-width: 300px;
+            max-height: 300px;
         }
 
     </style>

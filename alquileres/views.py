@@ -15,4 +15,4 @@ def detail(request, propiedadid):
         dpto = Propiedad.objects.get(id=propiedadid)
     except Propiedad.DoesNotExist:
         raise Http404("La propiedad ingresada no existe")
-    return render(request, 'propiedad/' + str(propiedadid) +'.html', {'dpto': dpto})
+    return render(request, 'alquileres/oneHouse.html', {'dpto': dpto})

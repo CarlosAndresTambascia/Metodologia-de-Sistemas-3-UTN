@@ -13,7 +13,7 @@
                         <div class="card-body">
                             <img class="card-img-top" src="{{ propiedad.imagen.url }}" alt="Imagen de la propiedad">
                             <p class="card-text">{{ propiedad.descripcion }}</p>
-                            <a href="/propiedad/{{ propiedad.id }}" class="btn btn-primary">Ir a la Publicacion</a>
+                            <a href="{% url 'alquileres:dpto' propiedad.id %}" class="btn btn-primary">Ir a la Publicacion</a>
                         </div>
                         <div class="card-footer text-muted">
                             <span style="color:black;font-weight:bold"> <i

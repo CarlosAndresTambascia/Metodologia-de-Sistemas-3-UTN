@@ -1,0 +1,31 @@
+{% extends 'base/base.html' %}
+{% block title %} Generar Reserva
+{% endblock %}
+{% block content %}
+    <form method="POST">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <p>
+                            <label for="">Fecha desde:</label>
+                            <input type="date" name="dateFrom" class="form-control" value="{{now}}">
+                        </p>
+                        <p>
+                            <label for="">Fecha hasta:</label>
+                            <input type="date" name="dateTo" class="form-control">
+                        </p>
+                        <button type="submit" class="btn btn-lg btn-warning" style="width: 100%"><span class="glyphicon glyphicon-edit"></span> Reservar</button>
+                    </form>
+{% endblock %}
+{% block footer %}
+    </div>
+    <style>
+        .customMargin {
+            margin: 10px;
+        }
+
+        .changeImageSize {
+            max-width: 600px;
+            max-height: 600px;
+        }
+    </style>
+{% endblock %}

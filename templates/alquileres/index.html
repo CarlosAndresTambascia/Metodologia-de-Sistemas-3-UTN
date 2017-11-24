@@ -1,6 +1,28 @@
 {% extends 'base/base.html' %}
 {% block title %} Alquileres
 {% endblock %}
+{% block header %}
+    <div class="container">
+    <nav class="navbar justify-content-center navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="/">Alquileres Page</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+     <form class="form-inline" method="GET" id="filterForm">
+     <input type="hidden" name="filter" value="true">
+        <div class="form-group">
+            <select name="idCiudad" id="idCiudad" class="form-control">
+                {% for c in ciudades %}
+                    <option value="{{ c.id }}">{{ c.nombre }}</option>
+                {% endfor %}
+            </select>
+        </div>
+      <button type="submit" class="btn btn-default">Filtrar</button>
+     </form>
+    </nav>
+
+{% endblock %}
 {% block content %}
     <div class="row">
         {% if propiedades %}
@@ -13,7 +35,8 @@
                         <div class="card-body">
                             <img class="card-img-top" src="{{ propiedad.imagen.url }}" alt="Imagen de la propiedad">
                             <p class="card-text">{{ propiedad.descripcion }}</p>
-                            <a href="{% url 'alquileres:dpto' propiedad.id %}" class="btn btn-primary">Ir a la Publicacion</a>
+                            <a href="{% url 'alquileres:dpto' propiedad.id %}" class="btn btn-primary">Ir a la
+                                Publicacion</a>
                         </div>
                         <div class="card-footer text-muted">
                             <span style="color:black;font-weight:bold"> <i
@@ -46,6 +69,7 @@
             max-width: 300px;
             max-height: 178px;
         }
+
 
     </style>
 

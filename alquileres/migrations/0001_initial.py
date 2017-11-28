@@ -44,7 +44,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('descripcion', models.CharField(max_length=500)),
-                ('precioDiario', models.DecimalField(decimal_places=2, max_digits=5)),
+                ('precioDiario', models.IntegerField()),
                 ('imagen', models.ImageField(upload_to='')),
                 ('titulo', models.CharField(max_length=50)),
                 ('numeroFicha', models.IntegerField()),
@@ -57,7 +57,7 @@ class Migration(migrations.Migration):
             name='Reserva',
             fields=[
                 ('numeroReserva', models.AutoField(primary_key=True, serialize=False)),
-                ('total', models.DecimalField(decimal_places=2, max_digits=5)),
+                ('total', models.IntegerField()),
                 ('fechaReserva', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='alquileres.fechaAlquiler')),
                 ('huesped', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='alquileres.Huesped')),
             ],

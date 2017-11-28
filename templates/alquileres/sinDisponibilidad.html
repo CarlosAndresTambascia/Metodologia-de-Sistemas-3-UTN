@@ -1,0 +1,15 @@
+{% extends 'base/base.html' %}
+{% block title %} Reserva Exitosa
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="alert alert-danger" role="alert">
+                <h4 class="alert-heading">Hubo un problema</h4>
+                <p>Las fechas seleccionadas no estan disponibles.</p>
+                <hr>
+                <p class="mb-0"><a href="/">Go home</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

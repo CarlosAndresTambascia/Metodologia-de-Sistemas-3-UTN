@@ -2,19 +2,8 @@
 {% block title %} Generar Reserva
 {% endblock %}
 {% block content %}
-    <form method="POST">
-                        {% csrf_token %}
-                        {{ form.as_p }}
-                        <p>
-                            <label for="">Fecha desde:</label>
-                            <input type="date" name="dateFrom" class="form-control">
-                        </p>
-                        <p>
-                            <label for="">Fecha hasta:</label>
-                            <input type="date" name="dateTo" class="form-control">
-                        </p>
-                        <button type="submit" class="btn btn-lg btn-warning" style="width: 100%"><span class="glyphicon glyphicon-edit"></span> Reservar</button>
-                    </form>
+    <div class="col-12 col-md-10 offset-md-1 pt-3 pb-3" style="background-color: #f5f5f5;">
+
 {% endblock %}
 {% block footer %}
     </div>
